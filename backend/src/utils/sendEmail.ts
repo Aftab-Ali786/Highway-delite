@@ -1,13 +1,13 @@
-// backend/src/utils/sendEmail.ts
+
 import nodemailer from "nodemailer";
 
 export async function sendOtpEmail(email: string, otp: string): Promise<void> {
   try {
     const transporter = nodemailer.createTransport({
-      service: "gmail", // or "Outlook", "Yahoo", etc.
+      service: "gmail", 
       auth: {
-        user: process.env.EMAIL_USER, // your email
-        pass: process.env.EMAIL_PASS  // your app password (not your real password)
+        user: process.env.EMAIL_USER, 
+        pass: process.env.EMAIL_PASS  
       }
     });
 

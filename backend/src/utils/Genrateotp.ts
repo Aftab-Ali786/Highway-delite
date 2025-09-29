@@ -1,4 +1,4 @@
-// backend/src/utils/generateOtp.ts
+
 export function generateOtp(length: number = 6): string {
   const digits = "0123456789";
   let otp = "";

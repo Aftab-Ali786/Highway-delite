@@ -1,11 +1,11 @@
-// backend/src/routes/notes.routes.ts
+
 import { Router, Response } from "express";
 import { Note } from "../models/notes.model";
 import { AuthRequest, authMiddleware } from "../middleware/authMiddleware";
 
 const router = Router();
 
-// Create Note
+
 router.post("/", authMiddleware, async (req: AuthRequest, res: Response) => {
   try {
     const { title, content } = req.body;
@@ -21,7 +21,7 @@ router.post("/", authMiddleware, async (req: AuthRequest, res: Response) => {
   }
 });
 
-// Get All Notes
+
 router.get("/", authMiddleware, async (req: AuthRequest, res: Response) => {
   try {
     const notes = await Note.find({ userId: req.userId });
@@ -31,7 +31,6 @@ router.get("/", authMiddleware, async (req: AuthRequest, res: Response) => {
   }
 });
 
-// Update Note
 router.put("/:id", authMiddleware, async (req: AuthRequest, res: Response) => {
   try {
     const { id } = req.params;
@@ -53,7 +52,7 @@ router.put("/:id", authMiddleware, async (req: AuthRequest, res: Response) => {
   }
 });
 
-// Delete Note
+
 router.delete("/:id", authMiddleware, async (req: AuthRequest, res: Response) => {
   try {
     const { id } = req.params;
